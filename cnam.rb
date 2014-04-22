@@ -124,6 +124,9 @@ if ARGV.first
 		else
 			puts '[ERROR] The lookup failed with an unknown error: ' + e.message
 		end
+	rescue SocketError => e
+		puts '[ERROR] There was an error connecting to the OpenCNAM server.'
+		puts '[ERROR] ' + e.message
 	end
 else
 	puts opts.help()
